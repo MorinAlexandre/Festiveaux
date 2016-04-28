@@ -1,2 +1,2 @@
-# Festiveaux
+# Festi'veaux
 Projet Ruby Rails
