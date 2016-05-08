@@ -27,7 +27,7 @@
                 <p><i><%= concert.festival.place %></i></p>
                 <p>Du <%= concert.festival.startDate %></p>
                 <p>au <%= concert.festival.endDate %></p>
-                <a href="<%= concert.festival.link %>" target="_blank"><button class="btn">Buy Tickets</button></a>
+                <p><%= link_to 'Information', concert.festival , class:'btn' %></p>
               </div>
             </div>
         <% end %>
