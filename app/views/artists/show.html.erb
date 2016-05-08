@@ -1,19 +1,46 @@
-<p id="notice"><%= notice %></p>
+<div id="showArtist" class="carousel slide" data-ride="carousel">
+  <!-- Wrapper for slides -->
+  <div class="artist-inner" role="listbox">
+    <div class="item active">
+      <img src="<%= @artist.picture %>" class="img-circle person">
+    </div>
+  </div>
 
-<p>
-  <strong>Name:</strong>
-  <%= @artist.name %>
-</p>
+  <div class="container text-center">
+    <h3><%= @artist.name.upcase %></h3>
+    <p><%= @artist.description %></p>
+  </div>
+</div>
 
-<p>
-  <strong>Description:</strong>
-  <%= @artist.description %>
-</p>
+<div id="tour" class="bg-1">
+  <div class="container">
+    <h3 class="text-center">OÙ SERA T-IL ?</h3>
+    <p class="text-center">Voici tous les festivals auquel l'artiste participe.<br> Prennez vite vos billets !</p>
+    <!--<ul class="list-group">
+      <li class="list-group-item">September <span class="label label-danger">Sold Out!</span></li>
+      <li class="list-group-item">October <span class="label label-danger">Sold Out!</span></li>
+      <li class="list-group-item">November <span class="badge">3</span></li>
+    </ul>-->
 
-<p>
-  <strong>Picture:</strong>
-  <%= @artist.picture %>
-</p>
-
-<%= link_to 'Edit', edit_artist_path(@artist) %> |
-<%= link_to 'Back', artists_path %>
+    <% if  @artist.concerts.any? %>
+      <div class="row text-center">
+        <% @artist.concerts.each do |concert| %>
+            <div class="col-sm-4">
+              <div class="thumbnail">
+                <img src="<%= concert.festival.picture %>" alt="Paris" width="400" height="300">
+                <p><strong><%= concert.festival.name %></strong></p>
+                <p><i><%= concert.festival.place %></i></p>
+                <p>Du <%= concert.festival.startDate %></p>
+                <p>au <%= concert.festival.endDate %></p>
+                <a href="<%= concert.festival.link %>" target="_blank"><button class="btn">Buy Tickets</button></a>
+              </div>
+            </div>
+        <% end %>
+      </div>
+    <% else  %>
+        <ul class="list-group">
+          <li class="list-group-item">Aucun festival</li>
+        </ul>
+    <% end %>
+  </div>
+  </div>
