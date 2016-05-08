@@ -1,34 +1,39 @@
-<p id="notice"><%= notice %></p>
+<div id="showfestival" class="carousel slide" data-ride="carousel">
+  <!-- Wrapper for slides -->
+  <div class="festival-inner" role="listbox">
+    <div class="item active">
+      <img src="<%= @festival.picture %>" class="img-circle person">
+    </div>
+  </div>
 
-<p>
-  <strong>Name:</strong>
-  <%= @festival.name %>
-</p>
+  <div class="container text-center">
+    <h3><%= @festival.name.upcase %></h3>
+    <p><%= @festival.description %></p>
+    <p><a href="<%= @festival.link %>" target="_blank"><button class="btn">Achetez vos tickets</button></a></p>
+  </div>
+</div>
 
-<p>
-  <strong>Place:</strong>
-  <%= @festival.place %>
-</p>
+<div id="tour" class="bg-1">
+  <div class="container">
+    <h3 class="text-center">Quels artistes seront présent ?</h3>
+    <p class="text-center">Voici tous les artistes du festival.<br> Prennez vite vos billets !</p>
 
-<p>
-  <strong>Startdate:</strong>
-  <%= @festival.startDate %>
-</p>
-
-<p>
-  <strong>Enddate:</strong>
-  <%= @festival.endDate %>
-</p>
-
-<p>
-  <strong>Description:</strong>
-  <%= @festival.description %>
-</p>
-
-<p>
-  <strong>Picture:</strong>
-  <%= @festival.picture %>
-</p>
-
-<%= link_to 'Edit', edit_festival_path(@festival) %> |
-<%= link_to 'Back', festivals_path %>
+    <% if  @festival.concerts.any? %>
+        <div class="row text-center">
+          <% @festival.concerts.each do |concert| %>
+              <div class="col-sm-4">
+                <div class="thumbnail">
+                  <img src="<%= concert.artist.picture %>" alt="Paris" width="400" height="300">
+                  <p><strong><%= concert.artist.name %></strong></p>
+                  <p><%= link_to 'Information', concert.artist , class:'btn' %></p>
+                </div>
+              </div>
+          <% end %>
+        </div>
+    <% else  %>
+        <ul class="list-group">
+          <li class="list-group-item">Aucun festival</li>
+        </ul>
+    <% end %>
+  </div>
+</div>

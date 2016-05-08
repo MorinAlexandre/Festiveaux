@@ -4,7 +4,7 @@ class FestivalsController < ApplicationController
   # GET /festivals
   # GET /festivals.json
   def index
-    @festivals = Festival.all
+    @festivals = Festival.paginate(page: params[:page], per_page:6)
   end
 
   # GET /festivals/1
