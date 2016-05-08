@@ -7,6 +7,7 @@ class CreateFestivals < ActiveRecord::Migration
       t.date :endDate
       t.text :description
       t.string :picture
+      t.string :link
 
       t.timestamps null: false
     end
