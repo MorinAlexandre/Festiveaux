@@ -103,7 +103,7 @@
       <% if @festivals[0] %>
       <div class="col-sm-4">
         <div class="thumbnail">
-          <img src="<%= @festivals[0].picture %>" alt="Paris" width="400" height="300">
+          <img src="<%= @festivals[0].image_url(:thumb).to_s %>" alt="Paris" width="400" height="300">
           <p><strong><%= @festivals[0].place %></strong></p>
           <p>Du <%= @festivals[0].startDate %></p>
           <p>Au  <%= @festivals[0].endDate %></p>
@@ -114,7 +114,7 @@
       <% if @festivals[1] %>
       <div class="col-sm-4">
         <div class="thumbnail">
-          <img src="<%= @festivals[1].picture %>" alt="New York" width="400" height="300">
+          <img src="<%= @festivals[1].image_url(:thumb).to_s %>" alt="New York" width="400" height="300">
           <p><strong><%= @festivals[1].place %></strong></p>
           <p>Du <%= @festivals[1].startDate %></p>
           <p>Au  <%= @festivals[1].endDate %></p>
@@ -125,7 +125,7 @@
       <% if @festivals[2] %>
       <div class="col-sm-4">
         <div class="thumbnail">
-          <img src="<%= @festivals[2].picture %>" alt="San Francisco" width="400" height="300">
+          <img src="<%= @festivals[2].image_url(:thumb).to_s %>" alt="San Francisco" width="400" height="300">
           <p><strong><%= @festivals[2].place %></strong></p>
           <p>Du <%= @festivals[2].startDate %></p>
           <p>Au  <%= @festivals[2].endDate %></p>

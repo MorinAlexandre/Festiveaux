@@ -2,14 +2,14 @@
   <!-- Wrapper for slides -->
   <div class="festival-inner" role="listbox">
     <div class="item active">
-      <img src="<%= @festival.picture %>" class="img-circle person">
+      <img src="<%= @festival.image_url.to_s %>" class="img-circle person">
     </div>
   </div>
 
   <div class="container text-center">
     <h3><%= @festival.name.upcase %></h3>
     <p><%= @festival.description %></p>
-    <p><a href="<%= @festival.link %>" target="_blank"><button class="btn">Achetez vos tickets</button></a></p>
+    <p><a href="" target="_blank"><button class="btn">Achetez vos tickets</button></a></p>
   </div>
 </div>
 
@@ -23,7 +23,7 @@
           <% @festival.concerts.each do |concert| %>
               <div class="col-sm-4">
                 <div class="thumbnail">
-                  <img src="<%= concert.artist.picture %>" alt="Paris" width="400" height="300">
+                  <img src="<%= concert.artist.image_url.to_s %>" alt="Paris" width="400" height="300">
                   <p><strong><%= concert.artist.name %></strong></p>
                   <p><%= link_to 'Information', concert.artist , class:'btn' %></p>
                 </div>

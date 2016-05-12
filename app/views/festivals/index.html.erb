@@ -25,7 +25,7 @@
           <% @festivals.each do |festival| %>
               <div class="col-sm-4">
                 <div class="thumbnail">
-                  <img src="<%= festival.picture %>" alt="Paris" width="400" height="300">
+                  <img src="<%= festival.image_url(:thumb).to_s %>" alt="Paris" width="400" height="300">
                   <p><strong><%= festival.name %></strong></p>
                   <p><i><%= festival.place %></i></p>
                   <p>Du <%= festival.startDate %></p>
