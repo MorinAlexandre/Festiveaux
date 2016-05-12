@@ -7,7 +7,7 @@
   <!-- Wrapper for slides -->
   <div class="carousel-inner" role="listbox">
     <div class="item active">
-      <img src="http://www.staragora.com/images/flux/default/0/f/f01ef2f50d3eedc1bacb8f30157c7ad9536a3564c35a1.jpg" alt="New York" width="1200" height="700">
+      <img src="http://www.daintygroup.com/site/wp-content/uploads/2013/10/EMINEM-JEREMYDEPUTAT-BY7Q5524_r-crop.jpg" alt="New York" width="1200" height="700">
       <div class="carousel-caption">
         <h3>Artistes</h3>
         <p>Retrouvez ici tous les artistes</p>
@@ -25,7 +25,7 @@
       <% @artists.each do |artist| %>
           <div class="col-sm-4">
             <p class="text-center"><strong><%= artist.name %></strong></p><br>
-            <%= link_to image_tag(artist.picture, class:'img-circle person' ), artist %>
+            <%= link_to image_tag(artist.image_url(:thumb).to_s, class: 'img-circle person'), artist %>
           </div>
       <% end %>
       </div>
