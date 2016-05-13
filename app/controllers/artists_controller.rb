@@ -10,6 +10,7 @@ class ArtistsController < ApplicationController
   # GET /artists/1
   # GET /artists/1.json
   def show
+    @concerts = @artist.concerts.paginate(page: params[:page], per_page:3)
   end
 
   # GET /artists/new

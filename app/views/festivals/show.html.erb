@@ -30,6 +30,9 @@
               </div>
           <% end %>
         </div>
+        <div class="row text-center">
+          <%= will_paginate @concerts, renderer: BootstrapPagination::Rails %>
+        </div>
     <% else  %>
         <ul class="list-group">
           <li class="list-group-item">Aucun festival</li>
