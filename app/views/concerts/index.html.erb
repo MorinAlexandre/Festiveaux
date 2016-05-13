@@ -14,7 +14,6 @@
   <tbody>
     <% @concerts.each do |concert| %>
       <tr>
-        <td><%= concert.day %></td>
         <td><%= concert.hour %></td>
         <td><%= link_to 'Show', concert %></td>
         <td><%= link_to 'Edit', edit_concert_path(concert) %></td>
