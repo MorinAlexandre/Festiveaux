@@ -8,6 +8,7 @@ class CreateFestivals < ActiveRecord::Migration
       t.text :description
       t.string :link
       t.string :image
+      t.string :remote_image_url
 
       t.timestamps null: false
     end
