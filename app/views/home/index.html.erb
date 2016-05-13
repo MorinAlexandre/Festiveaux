@@ -56,7 +56,7 @@
     <div class="col-sm-4">
       <p class="text-center"><strong><%= @artists[0].name %></strong></p><br>
       <a href="#demo" data-toggle="collapse">
-        <img src="<%= @artists[0].image_url(:thumb).to_s %>" class="img-circle person" alt="Random Name" width="255" height="255">
+        <%= link_to image_tag(@artists[0].image_url(:thumb).to_s, class: 'img-circle person'), @artists[0] %>
       </a>
     </div>
     <% end %>
@@ -64,26 +64,16 @@
     <div class="col-sm-4">
       <p class="text-center"><strong><%= @artists[1].name %></strong></p><br>
       <a href="#demo2" data-toggle="collapse">
-        <img src="<%= @artists[1].image_url(:thumb).to_s %>" class="img-circle person" alt="Random Name" width="255" height="255">
+        <%= link_to image_tag(@artists[1].image_url(:thumb).to_s, class: 'img-circle person'), @artists[1] %>
       </a>
-      <div id="demo2" class="collapse">
-        <p>Drummer</p>
-        <p>Loves drummin'</p>
-        <p>Member since 1988</p>
-      </div>
     </div>
     <% end %>
     <% if @artists[2] %>
     <div class="col-sm-4">
       <p class="text-center"><strong><%= @artists[2].name %></strong></p><br>
       <a href="#demo3" data-toggle="collapse">
-        <img src="<%= @artists[2].image_url(:thumb).to_s %>" class="img-circle person" alt="Random Name" width="255" height="255">
+        <%= link_to image_tag(@artists[2].image_url(:thumb).to_s, class: 'img-circle person'), @artists[2] %>
       </a>
-      <div id="demo3" class="collapse">
-        <p>Bass player</p>
-        <p>Loves math</p>
-        <p>Member since 2005</p>
-      </div>
     </div>
     <% end %>
   </div>
