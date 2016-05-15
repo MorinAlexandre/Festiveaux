@@ -12,16 +12,24 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :pseudo %><br>
-    <%= f.text_field :pseudo %>
-  </div>
-  <div class="field">
     <%= f.label :lastName %><br>
     <%= f.text_field :lastName %>
   </div>
   <div class="field">
     <%= f.label :firstName %><br>
     <%= f.text_field :firstName %>
+  </div>
+  <div class="field">
+    <%= f.label :pseudo %><br>
+    <%= f.text_field :pseudo %>
+  </div>
+  <div class="field">
+    <%= f.label :mdp %><br>
+    <%= f.password_field :mdp %>
+  </div>
+  <div class="field">
+    <%= f.label :validateMdp %><br>
+    <%= f.password_field :validateMdp %>
   </div>
   <div class="field">
     <%= f.label :email %><br>
