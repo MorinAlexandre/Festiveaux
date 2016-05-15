@@ -1,4 +1,4 @@
-class AddCommentToFestival < ActiveRecord::Migration
+class AddFestivalToComment < ActiveRecord::Migration
   def change
     add_reference :comments, :festival, index: true, foreign_key: true
   end

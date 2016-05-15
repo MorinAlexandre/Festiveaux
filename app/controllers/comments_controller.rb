@@ -27,8 +27,9 @@ class CommentsController < ApplicationController
     @comment = Comment.new(comment_params)
 
     respond_to do |format|
+      redirect = "/festivals/" + @comment.festival.id.to_s
       if @comment.save
-        format.html { redirect_to @comment, notice: 'Comment was successfully created.' }
+        format.html { redirect_to redirect, notice: 'Comment was successfully created.' }
         format.json { render :show, status: :created, location: @comment }
       else
         format.html { render :new }
@@ -69,6 +70,6 @@ class CommentsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def comment_params
-      params.require(:comment).permit(:content, :opinion)
+      params.require(:comment).permit(:content, :opinion,:festival_id)
     end
 end

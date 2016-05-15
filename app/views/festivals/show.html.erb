@@ -35,8 +35,48 @@
         </div>
     <% else  %>
         <ul class="list-group">
-          <li class="list-group-item">Aucun festival</li>
+          <li class="list-group-item">Aucun artiste</li>
         </ul>
     <% end %>
   </div>
 </div>
+<div class="bg-1">
+  <div class="container" >
+    <h3 class="text-center">Vos avis !</h3>
+    <p class="text-center">Retrouvez ici vos avis sur ce festival.<br> N'hesitez pas à commenter !</p>
+    <p class="text-center" ><button class="btn" id="btnAddComment" data-id="<%= @festival.id %>">Ecrire un commentaire</button></p>
+    <div id="addComment" style="display: none;" class="text-center">
+      <%=  render :partial => 'comments/form' %>
+    </div>
+    <ul class="list-group">
+      <% if  @comments.any? %>
+          <% @comments.each do |comment| %>
+            <li class="list-group-item">
+              <%= comment.content %>
+              <% if comment.opinion <= 2 %>
+                <span class="label label-danger pull-right"><%= comment.opinion %></span>
+              <% elsif comment.opinion >= 4%>
+                <span class="label label-success pull-right"><%= comment.opinion %></span>
+              <% else %>
+                <span class="label label-warning pull-right"><%= comment.opinion %></span>
+              <% end %>
+            </li>
+          <% end %>
+      <% else %>
+        <li class="list-group-item">Aucun commentaire pour le moment</li>
+      <% end %>
+    </ul>
+    <div class="text-center">
+      <%= will_paginate @comments, renderer: BootstrapPagination::Rails %>
+    </div>
+  </div>
+</div>
+
+<script>
+  $('#btnAddComment').on('click', function () {
+    $('#addComment').show();
+    $('#btnAddComment').hide();
+    $("#comment_festival_id").val($("#btnAddComment").attr('data-id'));
+    $(".comment_festival").hide();
+  })
+</script>
