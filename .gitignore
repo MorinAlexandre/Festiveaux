@@ -5,3 +5,6 @@ db/schema.rb
 db/development.sqlite3
 public/uploads/*
 Gemfile.lock
+db/test.sqlite3
+log/development.log
+public/*
