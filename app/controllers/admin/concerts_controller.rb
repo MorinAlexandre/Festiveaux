@@ -1,4 +1,5 @@
-class ConcertsController < AdminController
+module Admin
+  class ConcertsController < AdminController
   before_action :set_concert, only: [:show, :edit, :update, :destroy]
 
   # GET /concerts
@@ -75,4 +76,5 @@ class ConcertsController < AdminController
           :artist_id,
       )
     end
+  end
 end

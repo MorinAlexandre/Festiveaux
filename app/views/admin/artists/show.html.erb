@@ -1,0 +1,45 @@
+<div id="showArtist" class="carousel slide" data-ride="carousel">
+  <!-- Wrapper for slides -->
+  <div class="artist-inner" role="listbox">
+    <div class="item active">
+      <%= image_tag @artist.image_url.to_s, class: 'img-circle person' %>
+    </div>
+  </div>
+
+  <div class="container text-center">
+    <h3><%= @artist.name.upcase %></h3>
+    <p><%= @artist.description %></p>
+  </div>
+</div>
+
+<div id="tour" class="bg-1">
+  <div class="container">
+    <h3 class="text-center">OÙ SERA T-IL ?</h3>
+    <p class="text-center">Voici tous les festivals auquel l'artiste participe.<br> Prennez vite vos billets !</p>
+
+    <% if  @concerts.any? %>
+      <div class="row text-center">
+        <% @concerts.each do |concert| %>
+            <div class="col-sm-4">
+              <div class="thumbnail">
+                <img src="<%= concert.festival.image_url(:thumb).to_s %>" alt="Paris" width="400" height="300">
+                <p><strong><%= concert.festival.name %></strong></p>
+                <p><i><%= concert.festival.place %></i></p>
+                <p>Du <%= concert.festival.startDate %></p>
+                <p>au <%= concert.festival.endDate %></p>
+                <p><%= link_to 'Information', concert.festival , class:'btn' %></p>
+              </div>
+            </div>
+        <% end %>
+      </div>
+      <div class="row text-center">
+        <%= will_paginate @concerts, renderer: BootstrapPagination::Rails %>
+      </div>
+    <% else  %>
+        <ul class="list-group">
+          <li class="list-group-item">Aucun festival</li>
+        </ul>
+    <% end %>
+
+  </div>
+  </div>

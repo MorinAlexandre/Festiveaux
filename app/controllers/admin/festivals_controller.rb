@@ -1,3 +1,4 @@
+module Admin
 class FestivalsController < AdminController
   before_action :set_festival, only: [:show, :edit, :update, :destroy]
 
@@ -74,4 +75,5 @@ class FestivalsController < AdminController
     def festival_params
       params.require(:festival).permit(:name, :place, :startDate, :endDate, :description, :link, :image, :remote_image_url)
     end
+end
 end

@@ -1,10 +1,10 @@
 class AdminController < ApplicationController
-	namespace :admin do
-	  resources :artists, :comments, :festivals, :users, :concerts
-	end
-
 	layout "admin"
 
-
-
+  def index
+		@festivals = Festival.all
+		@artists = Artist.all
+		@comments = Comment.all
+		@concerts = Concert.all
+	end
 end

@@ -1,0 +1,45 @@
+<div id="myCarousel" class="carousel slide" data-ride="carousel">
+  <!-- Indicators -->
+  <ol class="carousel-indicators">
+    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+  </ol>
+
+  <!-- Wrapper for slides -->
+  <div class="carousel-inner" role="listbox">
+    <div class="item active">
+      <img src="http://cdn.99scenes.com/wp-content/uploads/2016/01/tomorrowland-2016.jpg" alt="New York" width="1200" height="700">
+      <div class="carousel-caption">
+        <h3>Festivals</h3>
+        <p>Retrouvez ici tous les Festivals</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="container text-center">
+    <h3>THE BAND</h3>
+    <p><em>We love music!</em></p>
+    <p>We have created a fictional band website. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+    <br>
+    <% if  @festivals.any? %>
+        <div class="row text-center">
+          <% @festivals.each do |festival| %>
+              <div class="col-sm-4">
+                <div class="thumbnail">
+                  <img src="<%= festival.image_url(:thumb).to_s %>" alt="Paris" width="400" height="300">
+                  <p><strong><%= festival.name %></strong></p>
+                  <p><i><%= festival.place %></i></p>
+                  <p>Du <%= festival.startDate %></p>
+                  <p>au <%= festival.endDate %></p>
+                  <%= link_to 'Information', festival , class:'btn' %>
+                </div>
+              </div>
+          <% end %>
+        </div>
+    <% else  %>
+        <ul class="list-group">
+          <li class="list-group-item">Aucun festival</li>
+        </ul>
+    <% end %>
+    <%= will_paginate @festivals, renderer: BootstrapPagination::Rails %>
+  </div>
+</div>

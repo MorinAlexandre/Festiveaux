@@ -1,0 +1,37 @@
+<div id="myCarousel" class="carousel slide" data-ride="carousel">
+  <!-- Indicators -->
+  <ol class="carousel-indicators">
+    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+  </ol>
+
+  <!-- Wrapper for slides -->
+  <div class="carousel-inner" role="listbox">
+    <div class="item active">
+      <img src="http://www.daintygroup.com/site/wp-content/uploads/2013/10/EMINEM-JEREMYDEPUTAT-BY7Q5524_r-crop.jpg" alt="New York" width="1200" height="700">
+      <div class="carousel-caption">
+        <h3>Artistes</h3>
+        <p>Retrouvez ici tous les artistes</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="container text-center">
+    <h3>THE BAND</h3>
+    <p><em>We love music!</em></p>
+    <p>We have created a fictional band website. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+    <br>
+    <% if @artists.any? %>
+      <div id="band" class="row">
+      <% @artists.each do |artist| %>
+          <div class="col-sm-4">
+            <p class="text-center"><strong><%= artist.name %></strong></p><br>
+            <%= link_to image_tag(artist.image_url(:thumb).to_s, class: 'img-circle person'), artist %>
+          </div>
+      <% end %>
+      </div>
+    <% else %>
+      Il n'y a aucun artiste pour le moment.
+    <% end %>
+    <%= will_paginate @artists, renderer: BootstrapPagination::Rails %>
+  </div>
+</div>

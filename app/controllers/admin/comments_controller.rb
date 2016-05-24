@@ -1,4 +1,5 @@
-class CommentsController < AdminController
+module Admin
+  class CommentsController < AdminController
   before_action :set_comment, only: [:show, :edit, :update, :destroy]
 
   # GET /comments
@@ -72,4 +73,5 @@ class CommentsController < AdminController
     def comment_params
       params.require(:comment).permit(:content, :opinion,:festival_id)
     end
+  end
 end
