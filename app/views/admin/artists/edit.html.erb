@@ -1,6 +1,8 @@
-<h1>Editing Artist</h1>
+<h1>Editer un artiste</h1>
 
 <%= render 'form' %>
 
-<%= link_to 'Show', @artist %> |
-<%= link_to 'Back', artists_path %>
+<br>
+<div>
+  <%= link_to 'Retour', admin_artist_path(@artist), class: 'btn btn-success' %>
+</div>
