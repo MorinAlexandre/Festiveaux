@@ -14,6 +14,7 @@ gem 'coffee-rails', '~> 4.1.0'
 # Bootstrap
 gem 'bootstrap-sass'
 gem 'autoprefixer-rails'
+gem 'bootstrap_sb_admin_base_v2'
 
 gem 'rmagick'
 gem 'carrierwave'
