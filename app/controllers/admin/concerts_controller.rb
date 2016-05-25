@@ -29,7 +29,7 @@ module Admin
 
     respond_to do |format|
       if @concert.save
-        format.html { redirect_to @concert, notice: 'Concert was successfully created.' }
+        format.html { redirect_to admin_concerts_path, notice: 'Concert créé !'}
         format.json { render :show, status: :created, location: @concert }
       else
         format.html { render :new }
@@ -43,7 +43,7 @@ module Admin
   def update
     respond_to do |format|
       if @concert.update(concert_params)
-        format.html { redirect_to @concert, notice: 'Concert was successfully updated.' }
+        format.html { redirect_to admin_concerts_path, notice: 'Concert modifié !'}
         format.json { render :show, status: :ok, location: @concert }
       else
         format.html { render :edit }
@@ -57,7 +57,7 @@ module Admin
   def destroy
     @concert.destroy
     respond_to do |format|
-      format.html { redirect_to concerts_url, notice: 'Concert was successfully destroyed.' }
+      format.html { redirect_to admin_concerts_path, notice: 'Concert effacé'}
       format.json { head :no_content }
     end
   end

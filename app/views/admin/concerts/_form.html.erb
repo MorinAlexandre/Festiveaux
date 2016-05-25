@@ -10,13 +10,15 @@
       </ul>
     </div>
   <% end %>
-  <div class="field">
+  <div class="form-group">
     <%= f.label :hour %><br>
     <%= f.datetime_select :hour %>
   </div>
-    <%= f.association :festival, label:'Festival', class:'form-control' %>
-    <%= f.association :artist, label:'Artiste', class:'form-control' %>
+  <div class="form-group">
+    <%= f.association :festival%>
+    <%= f.association :artist %>
+  </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit 'Valider' %>
   </div>
 <% end %>

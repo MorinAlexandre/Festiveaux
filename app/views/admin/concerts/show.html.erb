@@ -1,8 +1,10 @@
-<p id="notice"><%= notice %></p>
-<p>
-  <strong>Hour:</strong>
-  <%= @concert.hour %>
-</p>
+<h1>Affichage d'un concert</h1>
 
-<%= link_to 'Edit', edit_concert_path(@concert) %> |
-<%= link_to 'Back', concerts_path %>
+<p>Date et Heure : <%= @concert.hour %></p>
+<p>Festival : <%= @concert.festival.name %></p>
+<p>Artiste : <%= @concert.artist.name %></p>
+
+<p>
+  <%= link_to 'Editer', edit_admin_concert_path(@concert), class: 'btn btn-success' %>
+  <%= link_to 'Retour', admin_concerts_path, class: 'btn btn-success' %>
+</p>

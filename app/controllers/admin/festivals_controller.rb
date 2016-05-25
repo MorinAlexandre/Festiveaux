@@ -29,10 +29,10 @@ class FestivalsController < AdminController
 
     respond_to do |format|
       if @festival.save
-        format.html { redirect_to @festival, notice: 'Festival was successfully created.' }
+        format.html { redirect_to admin_festivals_path, notice: 'Festival crée !'}
         format.json { render :show, status: :created, location: @festival }
       else
-        format.html { render :new }
+        format.html { render :new, notice: 'Festival non-crée !', status: 0 }
         format.json { render json: @festival.errors, status: :unprocessable_entity }
       end
     end
@@ -43,7 +43,7 @@ class FestivalsController < AdminController
   def update
     respond_to do |format|
       if @festival.update(festival_params)
-        format.html { redirect_to @festival, notice: 'Festival was successfully updated.' }
+        format.html { redirect_to admin_festivals_path, notice: 'Festival modifié !'}
         format.json { render :show, status: :ok, location: @festival }
       else
         format.html { render :edit }
@@ -57,7 +57,7 @@ class FestivalsController < AdminController
   def destroy
     @festival.destroy
     respond_to do |format|
-      format.html { redirect_to festivals_url, notice: 'Festival was successfully destroyed.' }
+      format.html { redirect_to admin_festivals_path, notice: 'Festival effacé !'}
       format.json { head :no_content }
     end
   end

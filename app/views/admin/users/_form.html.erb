@@ -11,39 +11,39 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <div class="form-group">
     <%= f.label :lastName, 'Nom de famille' %><br>
-    <%= f.text_field :lastName %>
+    <%= f.text_field :lastName, class: 'form-control' %>
   </div>
-  <div class="field">
+  <div class="form-group">
     <%= f.label :firstName, 'Prénom' %><br>
-    <%= f.text_field :firstName %>
+    <%= f.text_field :firstName, class: 'form-control' %>
   </div>
-  <div class="field">
+  <div class="form-group">
     <%= f.label :pseudo, 'Pseudo' %><br>
-    <%= f.text_field :pseudo %>
+    <%= f.text_field :pseudo, class: 'form-control' %>
   </div>
-  <div class="field">
+  <div class="form-group">
     <%= f.label :mdp, 'Mot de passe' %><br>
-    <%= f.password_field :mdp %>
+    <%= f.password_field :mdp, class: 'form-control' %>
   </div>
-  <div class="field">
+  <div class="form-group">
     <%= f.label :validateMdp, 'Validation du mot de passe' %><br>
-    <%= f.password_field :validateMdp %>
+    <%= f.password_field :validateMdp, class: 'form-control' %>
   </div>
-  <div class="field">
+  <div class="form-group">
     <%= f.label :email, 'Courriel' %><br>
-    <%= f.text_field :email %>
+    <%= f.text_field :email, class: 'form-control' %>
   </div>
-  <div class="field">
+  <div class="form-group">
     <%= f.label :city, 'Ville' %><br>
-    <%= f.text_field :city %>
+    <%= f.text_field :city, class: 'form-control' %>
   </div>
-  <div class="field">
+  <div class="form-group">
     <%= f.label :status %><br>
-    <%= f.check_box :status %>
+    <%= f.check_box :status, class: 'checkbox' %>
   </div>
-  <div class="actions">
-    <%= f.submit 'Valider', class: 'btn btn-success' %>
+  <div class="form-group">
+    <%= f.submit 'Valider', class: 'btn btn-default' %>
   </div>
 <% end %>
