@@ -21,7 +21,7 @@ class ConnexionController < ApplicationController
       end
     else
       respond_to do |format|
-          format.html { redirect_to admin_accueil_path, notice: 'Aucun utilisateur.' }
+          format.html { redirect_to admin_accueil_path }
       end
     end
   end
