@@ -13,7 +13,7 @@
   </div>
 </div>
 
-<div id="tour" class="bg-1">
+<div id="concerts" class="bg-1">
   <div class="container">
     <h3 class="text-center">Quels artistes seront présent ?</h3>
     <p class="text-center">Voici tous les artistes du festival.<br> Prennez vite vos billets !</p>
@@ -31,7 +31,7 @@
           <% end %>
         </div>
         <div class="row text-center">
-          <%= will_paginate @concerts, renderer: BootstrapPagination::Rails %>
+          <%= will_paginate @concerts, renderer: BootstrapPagination::Rails, :params => {:anchor => '#concerts'}%>
         </div>
     <% else  %>
         <ul class="list-group">
@@ -40,7 +40,7 @@
     <% end %>
   </div>
 </div>
-<div class="bg-1">
+<div class="bg-1" id="comments">
   <div class="container" >
     <h3 class="text-center">Vos avis !</h3>
     <p class="text-center">Retrouvez ici vos avis sur ce festival.<br> N'hesitez pas à commenter !</p>
@@ -67,7 +67,7 @@
       <% end %>
     </ul>
     <div class="text-center">
-      <%= will_paginate @comments, renderer: BootstrapPagination::Rails %>
+      <%= will_paginate @comments, renderer: BootstrapPagination::Rails, :params => {:anchor => '#comments'}%>
     </div>
   </div>
 </div>
