@@ -1,5 +1,5 @@
 class ConcertsController < ApplicationController
-  before_action :set_concert, only: [:show]
+  before_action :set_concert, only: [:show, :update]
 
   # GET /concerts
   # GET /concerts.json

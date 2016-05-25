@@ -1,5 +1,5 @@
 class FestivalsController < ApplicationController
-  before_action :set_festival, only: [:show]
+  before_action :set_festival, only: [:show, :update]
 
   # GET /festivals
   # GET /festivals.json
@@ -43,6 +43,7 @@ class FestivalsController < ApplicationController
   # PATCH/PUT /festivals/1
   # PATCH/PUT /festivals/1.json
   def update
+    puts YAML::dump(festival_params)
     respond_to do |format|
       if @festival.update(festival_params)
         format.html { redirect_to admin_festivals_path, notice: 'Festival modifié !'}
