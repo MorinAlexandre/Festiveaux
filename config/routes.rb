@@ -6,7 +6,10 @@ Rails.application.routes.draw do
   resources :festivals
   root 'home#index'
   get 'contact' => 'home#contact'
-  get 'connexion' => 'admin#index'
+  get 'connexion' => 'connexion#index'
+  get 'admin/accueil' => 'admin#index'
+
+  post 'connexion/login' => 'connexion#login'
 
   namespace :admin do
     resources :artists, :comments, :festivals, :users, :concerts
