@@ -10,5 +10,6 @@
   <%= @comment.opinion %>
 </p>
 
+<p><%= will_paginate @comments, renderer: BootstrapPagination::Rails %></p>
 <%= link_to 'Edit', edit_comment_path(@comment) %> |
 <%= link_to 'Back', comments_path %>

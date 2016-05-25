@@ -8,6 +8,7 @@
   </div>
   <!-- /.row -->
   <div class="row">
+    <%= link_to admin_festivals_path do %>
     <div class="col-lg-3 col-md-6">
       <div class="panel panel-primary">
         <div class="panel-heading">
@@ -21,15 +22,10 @@
             </div>
           </div>
         </div>
-        <a href="#">
-          <div class="panel-footer">
-            <%= link_to 'Détail', admin_festivals_path, class: 'pull-left'%>
-            <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
-            <div class="clearfix"></div>
-          </div>
-        </a>
       </div>
     </div>
+    <% end %>
+    <%= link_to admin_comments_path do %>
     <div class="col-lg-3 col-md-6">
       <div class="panel panel-yellow">
         <div class="panel-heading">
@@ -43,15 +39,10 @@
             </div>
           </div>
         </div>
-        <a href="#">
-          <div class="panel-footer">
-            <%= link_to 'Détail', admin_comments_path, class: 'pull-left'%>
-            <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
-            <div class="clearfix"></div>
-          </div>
-        </a>
-      </div>
     </div>
+        </div>
+      <% end %>
+    <%= link_to admin_artists_path do %>
     <div class="col-lg-3 col-md-6">
       <div class="panel panel-green">
         <div class="panel-heading">
@@ -65,15 +56,10 @@
             </div>
           </div>
         </div>
-        <a href="#">
-          <div class="panel-footer">
-            <%= link_to 'Détail', admin_artists_path, class: 'pull-left'%>
-            <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
-            <div class="clearfix"></div>
-          </div>
-        </a>
       </div>
     </div>
+    <% end %>
+    <%= link_to admin_concerts_path do %>
     <div class="col-lg-3 col-md-6">
       <div class="panel panel-red">
         <div class="panel-heading">
@@ -87,14 +73,8 @@
             </div>
           </div>
         </div>
-        <a href="#">
-          <div class="panel-footer">
-            <%= link_to 'Détail', admin_concerts_path, class: 'pull-left'%>
-            <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
-            <div class="clearfix"></div>
-          </div>
-        </a>
       </div>
     </div>
+    <% end %>
   </div>
 

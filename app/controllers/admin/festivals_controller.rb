@@ -5,7 +5,7 @@ class FestivalsController < AdminController
   # GET /festivals
   # GET /festivals.json
   def index
-    @festivals = Festival.paginate(page: params[:page], per_page:6)
+    @festivals = Festival.paginate(page: params[:page], per_page:10)
   end
 
   # GET /festivals/1

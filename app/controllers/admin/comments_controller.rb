@@ -5,7 +5,7 @@ module Admin
   # GET /comments
   # GET /comments.json
   def index
-    @comments = Comment.all
+    @comments = Comment.paginate(page: params[:page], per_page:10)
   end
 
   # GET /comments/1

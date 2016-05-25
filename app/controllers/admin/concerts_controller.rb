@@ -5,7 +5,7 @@ module Admin
   # GET /concerts
   # GET /concerts.json
   def index
-    @concerts = Concert.all
+    @concerts = Concert.paginate(page: params[:page], per_page:10)
   end
 
   # GET /concerts/1

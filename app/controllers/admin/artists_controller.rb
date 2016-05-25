@@ -5,7 +5,7 @@ module Admin
     # GET /artists
     # GET /artists.json
     def index
-      @artists = Artist.paginate(page: params[:page], per_page:6)
+      @artists = Artist.paginate(page: params[:page], per_page:10)
     end
 
     # GET /artists/1

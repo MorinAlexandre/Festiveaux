@@ -7,7 +7,7 @@
   <title>Festi'Veaux Admin </title>
   <link href="http://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
   <link href="http://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag    'bootstrap_sb_admin_base_v2', media: 'all', 'data-turbolinks-track' => true %>
    <!-- MetisMenu CSS -->
     <%= stylesheet_link_tag    'metisMenu.min', media: 'all', 'data-turbolinks-track' => true %>
 
@@ -76,22 +76,22 @@
       <div class="sidebar-nav navbar-collapse">
         <ul class="nav" id="side-menu">
           <li>
-            <%= link_to 'ACCUEIL', connexion_path, class: 'fa fa-dashboard fa-fw'%>
+            <%= link_to 'Accueil', connexion_path, class: 'fa fa-home'%>
           </li>
           <li>
-            <%= link_to 'FESTIVAL', admin_festivals_path, class: 'fa fa-bar-chart-o fa-fw'%>
+            <%= link_to 'Festival', admin_festivals_path, class: 'fa fa-music'%>
           </li>
           <li>
-            <%= link_to 'ARTISTE', admin_artists_path, class: 'fa fa-table fa-fw'%>
+            <%= link_to 'Artiste', admin_artists_path, class: 'fa fa-child'%>
           </li>
           <li>
-            <%= link_to 'CONCERT', admin_concerts_path, class: 'fa fa-edit fa-fw'%>
+            <%= link_to 'Concert', admin_concerts_path, class: 'fa fa-bullhorn'%>
           </li>
           <li>
-            <%= link_to 'COMMENTAIRE', admin_comments_path, class: 'fa fa-edit fa-fw'%>
+            <%= link_to 'Commentaire', admin_comments_path, class: 'fa fa-comments'%>
           </li>
           <li>
-            <%= link_to 'UTILISATEUR', admin_users_path, class: 'fa fa-edit fa-fw'%>
+            <%= link_to 'Utilisateur', admin_users_path, class: 'fa fa-group'%>
           </li>
         </ul>
       </div>

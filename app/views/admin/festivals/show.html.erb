@@ -5,6 +5,7 @@
 <p>Date : Du <%= @festival.startDate %> au <%= @festival.endDate %></p>
 <p>Description : <%= @festival.description %></p>
 
+<p><%= will_paginate @festivals, renderer: BootstrapPagination::Rails %></p>
 <p>
   <%= link_to 'Editer', edit_admin_festival_path(@festival), class: 'btn btn-success' %>
   <%= link_to 'Retour', admin_festivals_path, class: 'btn btn-success' %>
