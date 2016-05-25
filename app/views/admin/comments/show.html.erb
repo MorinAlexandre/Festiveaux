@@ -1,15 +1,9 @@
-<p id="notice"><%= notice %></p>
+<h1>Affichage d'un commentaire</h1>
+
+<p>Note : <%= @comment.opinion %></p>
+<p>Festival : <%= @comment.festival.name %></p>
+<p>Description : <%= @comment.content %></p>
 
 <p>
-  <strong>Content:</strong>
-  <%= @comment.content %>
+  <%= link_to 'Retour', admin_comments_path, class: 'btn btn-success' %>
 </p>
-
-<p>
-  <strong>Opinion:</strong>
-  <%= @comment.opinion %>
-</p>
-
-
-<%= link_to 'Edit', edit_comment_path(@comment) %> |
-<%= link_to 'Back', comments_path %>

@@ -18,7 +18,7 @@
             <td><%= artist.name %></td>
             <td><%= link_to 'Afficher', admin_artist_path(artist) , class: 'btn btn-primary' %></td>
             <td><%= link_to 'Editer', edit_admin_artist_path(artist) , class: 'btn btn-success'%></td>
-            <td><%= link_to 'Effacer', artist, method: :delete, data: { confirm: 'Etes-vous sûr(e) de vouloir supprimer cette artiste ?' }, class: 'btn btn-danger' %></td>
+            <td><%= link_to 'Effacer', admin_artist_path(artist), method: :delete, data: { confirm: 'Etes-vous sûr(e) de vouloir supprimer cette artiste ?' }, class: 'btn btn-danger' %></td>
           </tr>
           </tbody>
       <% end %>
