@@ -13,7 +13,45 @@ class ArtistsController < ApplicationController
     @concerts = @artist.concerts.paginate(page: params[:page], per_page:3)
   end
 
-  
+  # GET /artists/new
+  def new
+    @artist = Artist.new
+  end
+
+  # GET /artists/1/edit
+  def edit
+  end
+
+  # POST /artists
+  # POST /artists.json
+  def create
+    @artist = Artist.new(artist_params)
+
+    respond_to do |format|
+      if @artist.save
+        format.html { redirect_to admin_artists_path, notice: 'Artiste créé !'}
+        format.json { render :show, status: :created, location: @artist }
+      else
+        format.html { render :new }
+        format.json { render json: @artist.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+
+  # PATCH/PUT /artists/1
+  # PATCH/PUT /artists/1.json
+  def update
+    respond_to do |format|
+      if @artist.update(artist_params)
+        format.html { redirect_to admin_artists_path, notice: 'Artiste modifié !' }
+        format.json { render :show, status: :ok, location: @artist }
+      else
+        format.html { render :edit}
+        format.json { render json: @artist.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_artist

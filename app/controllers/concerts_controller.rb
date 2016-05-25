@@ -11,7 +11,44 @@ class ConcertsController < ApplicationController
   # GET /concerts/1.json
   def show
   end
+  # GET /concerts/new
+  def new
+    @concert = Concert.new
+  end
 
+  # GET /concerts/1/edit
+  def edit
+  end
+
+  # POST /concerts
+  # POST /concerts.json
+  def create
+    @concert = Concert.new(concert_params)
+
+    respond_to do |format|
+      if @concert.save
+        format.html { redirect_to admin_concerts_path, notice: 'Concert créé !'}
+        format.json { render :show, status: :created, location: @concert }
+      else
+        format.html { render :new }
+        format.json { render json: @concert.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+
+  # PATCH/PUT /concerts/1
+  # PATCH/PUT /concerts/1.json
+  def update
+    respond_to do |format|
+      if @concert.update(concert_params)
+        format.html { redirect_to admin_concerts_path, notice: 'Concert modifié !'}
+        format.json { render :show, status: :ok, location: @concert }
+      else
+        format.html { render :edit }
+        format.json { render json: @concert.errors, status: :unprocessable_entity }
+      end
+    end
+  end
 
   private
     # Use callbacks to share common setup or constraints between actions.
