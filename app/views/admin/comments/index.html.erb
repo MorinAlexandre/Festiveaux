@@ -23,7 +23,7 @@
     <% end %>
   </tbody>
 </table>
-
+<p><%= will_paginate @comments, renderer: BootstrapPagination::Rails %></p>
 <br>
 
 <%= link_to 'New Comment', new_comment_path %>

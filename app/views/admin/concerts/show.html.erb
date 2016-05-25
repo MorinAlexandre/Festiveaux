@@ -4,6 +4,5 @@
   <%= @concert.hour %>
 </p>
 
-<p><%= will_paginate @concerts, renderer: BootstrapPagination::Rails %></p>
 <%= link_to 'Edit', edit_concert_path(@concert) %> |
 <%= link_to 'Back', concerts_path %>

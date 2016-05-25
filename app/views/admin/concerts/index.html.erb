@@ -23,6 +23,7 @@
   </tbody>
 </table>
 
+<p><%= will_paginate @concerts, renderer: BootstrapPagination::Rails %></p>
 <br>
 
 <%= link_to 'New Concert', new_admin_concert_path %>

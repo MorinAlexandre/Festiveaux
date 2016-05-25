@@ -3,7 +3,6 @@
 <p>Nom : <%= @artist.name %></p>
 <p>Description : <%= @artist.description %></p>
 
-<p><%= will_paginate @artists, renderer: BootstrapPagination::Rails %></p>
 <p>
   <%= link_to 'Editer', edit_admin_artist_path(@artist), class: 'btn btn-success' %>
   <%= link_to 'Retour', admin_artists_path, class: 'btn btn-success' %>
