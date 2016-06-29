@@ -19,6 +19,7 @@ gem 'bootstrap_sb_admin_base_v2'
 gem 'rmagick'
 gem 'carrierwave'
 gem 'devise'
+gem 'devise-i18n'
 
 gem 'simple_form'
 # pagination bootstrap

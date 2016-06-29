@@ -1,17 +1,43 @@
-<h2>Sign up</h2>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
 
-<%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= f.error_notification %>
+      <div class="main">
 
-  <div class="form-inputs">
-    <%= f.input :email, required: true, autofocus: true %>
-    <%= f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length) %>
-    <%= f.input :password_confirmation, required: true %>
+        <div class="row">
+          <div class="col-xs-12 col-sm-6 col-sm-offset-1">
+            <% if notice %>
+                <p id="notice" class="alert alert-danger"><%= notice %></p>
+            <% end %>
+            <h1>S'enregistrer</h1>
+            <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+              <%= f.error_notification %>
+
+              <div class="form-inputs">
+                <div class="form-group">
+                <%= f.label :email, 'Courriel' %>
+                <%= f.text_field :email, required: true, autofocus: true, class: 'form-control' %>
+                  </div>
+                  <div class="form-group">
+                <%= f.label :password, 'Mot de passe' %>
+                <%= f.password_field :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length), class: 'form-control' %>
+                  </div>
+                    <div class="form-group">
+                <%= f.label :password_confirmation, 'Confirmation du mot de passe' %>
+                <%= f.password_field :password_confirmation, required: true, class: 'form-control' %>
+                    </div>
+              </div>
+
+              <div class="form-actions">
+                <%= f.button :submit, 'S\'enregistrer', class: 'btn btn-success btn btn-success' %>
+              </div>
+            <% end %>
+
+          <%= render "users/shared/links" %>
+          </div>
+        </div>
+
+      </div>
+    </div>
   </div>
-
-  <div class="form-actions">
-    <%= f.button :submit, "Sign up" %>
-  </div>
-<% end %>
-
-<%= render "users/shared/links" %>
+</div>
