@@ -1,6 +1,7 @@
 module Admin
   class CommentsController < AdminController
   before_action :set_comment, only: [:show, :edit, :destroy]
+  before_action :authenticate_user!
 
   # GET /comments
   # GET /comments.json

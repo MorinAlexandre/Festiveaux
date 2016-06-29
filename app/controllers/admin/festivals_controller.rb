@@ -1,6 +1,7 @@
 module Admin
 class FestivalsController < AdminController
   before_action :set_festival, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!
 
   # GET /festivals
   # GET /festivals.json
