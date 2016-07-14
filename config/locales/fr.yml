@@ -1,4 +1,4 @@
-railfr:
+fr:
   activerecord:
     attributes:
       user:
@@ -7,10 +7,23 @@ railfr:
         password: Mot de passe
         password_confirmation: Confirmation du mot de passe
         remember_me: Se souvenir de moi
-        reset_password_token: 
-        unlock_token: 
+        reset_password_token:
+        unlock_token:
     models:
       user: Utilisateur
+    errors:
+      models:
+            user:
+              attributes:
+                email:
+                  blank: "Champs non rempli"
+                  invalid: "invalide"
+                  taken: "existe déjà"
+                password:
+                  blank: "Champs non rempli"
+                  too_short: "trop court"
+                password_confirmation:
+                  confirmation: "pas identique avec le mot de passe"
   devise:
     confirmations:
       confirmed: Votre compte a été confirmé avec succès.
@@ -118,3 +131,4 @@ railfr:
       not_saved:
         one: 'une erreur a empêché ce (cet ou cette) %{resource} d’être enregistré(e) :'
         other: "%{count} erreurs ont empêché ce (cet ou cette) %{resource} d’être enregistré(e) :"
+

@@ -11,7 +11,7 @@
             <% end %>
             <h1>Mot de passe oublié ?</h1>
               <%= simple_form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
-                <%= f.error_notification %>
+                <%= devise_error_messages! %>
 
                 <div class="form-inputs">
                   <div class="form-group">
@@ -22,10 +22,9 @@
 
                 <div class="form-actions">
                   <%= f.button :submit, 'Envoyer' , class: 'btn btn-success btn btn-success'%>
+                  <%= render "users/shared/links" %>
                 </div>
               <% end %>
-
-              <%= render "users/shared/links" %>
           </div>
         </div>
 
