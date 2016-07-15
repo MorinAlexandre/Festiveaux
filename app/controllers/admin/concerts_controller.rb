@@ -8,6 +8,8 @@ module Admin
   # GET /concerts.json
   def index
     @concerts = Concert.paginate(page: params[:page], per_page:10)
+    @festivals = Festival.all
+    @artists = Artist.all
   end
 
   # GET /concerts/1

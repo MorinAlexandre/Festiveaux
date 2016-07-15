@@ -1,6 +1,3 @@
-<% if notice %>
-      <p id="notice" class="alert alert-success"><%= notice %></p>
-<% end %>
 <h1>Concerts</h1>
 <% if @concerts.any? %>
   <table class="table">
@@ -32,4 +29,6 @@
     <p>Il n'y a pas encore de concert.</p>
 <% end %>
 <br>
+<% if @festivals.any? && @artists.any? %>
 <p><%= link_to 'Ajouter un concert', new_admin_concert_path, class: 'btn btn-success' %>
+<% end %>
