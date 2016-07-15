@@ -8,6 +8,8 @@ Rails.application.routes.draw do
   resources :artists
   resources :concerts
   resources :festivals
+  resources :users
+
   root 'home#index'
   get 'contact' => 'home#contact'
   get 'connexion' => 'connexion#index'

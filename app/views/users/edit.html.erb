@@ -1,0 +1,29 @@
+<div id="myCarousel" class="carousel slide" data-ride="carousel">
+  <!-- Indicators -->
+  <ol class="carousel-indicators">
+    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+  </ol>
+
+  <!-- Wrapper for slides -->
+  <div class="carousel-inner" role="listbox">
+    <div class="item active">
+      <img src="https://pbs.twimg.com/media/CmMQ5FkWQAAbChF.jpg" alt="New York" width="1200" height="700">
+      <div class="carousel-caption">
+        <h3>Mon profil</h3>
+        <p>Retrouvez ici les informations en rapport avec votre compte</p>
+      </div>
+    </div>
+  </div>
+
+
+</div>
+<div class="container text-center">
+  <h1>Mes informations</h1>
+
+  <%= render 'form' %>
+  <br>
+  <%= link_to 'Retour', user_path(@user), class: 'btn' %>
+  <p>
+
+  </p>
+</div>
