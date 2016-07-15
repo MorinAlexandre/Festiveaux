@@ -2,6 +2,7 @@ module Admin
   class ConcertsController < AdminController
   before_action :set_concert, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!
+  load_and_authorize_resource
 
   # GET /concerts
   # GET /concerts.json

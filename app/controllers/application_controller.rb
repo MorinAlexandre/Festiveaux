@@ -8,4 +8,12 @@ class ApplicationController < ActionController::Base
     I18n.locale=params[:locale]
   end
 
+  rescue_from CanCan::AccessDenied do |exception|
+    flash[:error] = 'Vous n\'êtes pas autorisé à acceder à cette page.'
+    if request.env['HTTP_REFERER'].present?
+      redirect_to :back
+    else
+      redirect_to root_path
+    end
+  end
 end

@@ -16,10 +16,18 @@ gem 'bootstrap-sass'
 gem 'autoprefixer-rails'
 gem 'bootstrap_sb_admin_base_v2'
 
+#Gestion des images
 gem 'rmagick'
 gem 'carrierwave'
+
+#Gestion des users
 gem 'devise'
 gem 'devise-i18n'
+
+#Gestion des droits
+gem 'cancancan'
+gem 'rolify'
+
 
 gem 'simple_form'
 # pagination bootstrap

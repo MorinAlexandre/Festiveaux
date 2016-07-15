@@ -95,9 +95,6 @@
           <li>
             <%= link_to 'Commentaire', admin_comments_path, class: 'fa fa-comments'%>
           </li>
-          <li>
-            <%= link_to 'Utilisateur', admin_users_path, class: 'fa fa-group'%>
-          </li>
         </ul>
       </div>
       <!-- /.sidebar-collapse -->
@@ -105,6 +102,13 @@
     <!-- /.navbar-static-side -->
   </nav>
   <div id="page-wrapper">
+    <% flash.each do |key, value| %>
+        <% if key == 'notice' %>
+            <div class="alert alert-success"><%= value %></div>
+        <% else %>
+            <div class="alert alert-danger"><%= value %></div>
+        <% end %>
+    <% end %>
   <%= yield %>
     </div>
 </div>

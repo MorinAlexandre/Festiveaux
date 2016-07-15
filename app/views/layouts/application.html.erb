@@ -32,7 +32,9 @@
         <li><%= link_to 'ARTISTES', artists_path %></li>
         <li><%= link_to 'CONTACT',  contact_path %></li>
         <% if user_signed_in? %>
-          <li><%= link_to 'ADMINISTRATION',admin_accueil_path %></li>
+          <% if can? :manage, Admin %>
+            <li><%= link_to 'ADMINISTRATION',admin_accueil_path %></li>
+          <% end %>
           <li><%= link_to 'DECONNEXION', destroy_user_session_path, :method => :delete %></li>
         <% else %>
           <li><%= link_to 'CONNEXION', user_session_path %></li>
@@ -42,6 +44,13 @@
   </div>
 </nav>
 <h3>-</h3>
+<% flash.each do |key, value| %>
+    <% if key == 'notice' %>
+      <div class="alert alert-success"><%= value %></div>
+    <% else %>
+      <div class="alert alert-danger"><%= value %></div>
+    <% end %>
+<% end %>
 <%= yield %>
 
 </body>
