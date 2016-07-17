@@ -43,8 +43,10 @@
 <div class="bg-1" id="comments">
   <div class="container" >
     <h3 class="text-center">Vos avis !</h3>
-    <p class="text-center">Retrouvez ici vos avis sur ce festival.<br> N'hesitez pas à commenter !</p>
-    <p class="text-center" ><button class="btn" id="btnAddComment" data-id="<%= @festival.id %>">Ecrire un commentaire</button></p>
+    <p class="text-center">Retrouvez ici vos avis sur ce festival.<br> N'hesitez pas à laisser un commentaire !</p>
+    <% if user_signed_in? %>
+      <p class="text-center" ><button class="btn" id="btnAddComment" data-id="<%= @festival.id %>">Ecrire un commentaire</button></p>
+    <% end %>
     <div id="addComment" style="display: none;" class="text-center">
       <%=  render :partial => 'comments/form' %>
     </div>
@@ -53,6 +55,11 @@
           <% @comments.each do |comment| %>
             <li class="list-group-item">
               <%= comment.content %>
+                <% if comment.user.username.blank? %>
+                  <span class="label label-info pull-right">par <%= comment.user.email %></span>
+                <% else%>
+                  <span class="label label-info pull-right">par <%= comment.user.username %></span>
+                <% end %>
               <% if comment.opinion <= 2 %>
                 <span class="label label-danger pull-right"><%= comment.opinion %></span>
               <% elsif comment.opinion >= 4%>
