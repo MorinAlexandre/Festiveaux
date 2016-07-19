@@ -10,7 +10,7 @@ class FestivalsController < ApplicationController
   # GET /festivals/1
   # GET /festivals/1.json
   def show
-    @concerts = @festival.concerts.paginate(page: params[:page], per_page:3)
+    @concerts = @festival.concerts.paginate(page: params[:page], per_page:6)
     @comment = Comment.new
     @comments = @festival.comments.paginate(page: params[:page], per_page:5)
   end

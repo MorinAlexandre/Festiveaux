@@ -30,14 +30,14 @@
               </div>
           <% end %>
         </div>
-        <div class="row text-center">
-          <%= will_paginate @concerts, renderer: BootstrapPagination::Rails, :params => {:anchor => '#concerts'}%>
-        </div>
     <% else  %>
         <ul class="list-group">
           <li class="list-group-item">Aucun artiste</li>
         </ul>
     <% end %>
+    <div class="row text-center">
+      <%= will_paginate @concerts, renderer: BootstrapPagination::Rails, :params => {:anchor => '#concerts'}%>
+    </div>
   </div>
 </div>
 <div class="bg-1" id="comments">
